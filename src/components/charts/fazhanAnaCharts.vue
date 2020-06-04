@@ -52,11 +52,12 @@ export default {
           {
             name: '',
             type: 'pie',
-            radius: ['40%', '55%'],
+            radius: ['25%', '10%'],
+            // radius: ['40%', '55%'],
             label: {
               normal: {
                 formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
-                backgroundColor: '#ffffff',
+                // backgroundColor: '#ffffff',
                 borderColor: '#aaa',
                 borderWidth: 0,
                 borderRadius: 4,
@@ -68,16 +69,17 @@ export default {
                 rich: {
                   a: {
                     color: '#999',
-                    lineHeight: 22,
-                    align: 'center'
+                    lineHeight: 13,
+                    align: 'center',
+                    backgroundColor: '#000'
                   },
-                  // abg: {
-                  //     backgroundColor: '#333',
-                  //     width: '100%',
-                  //     align: 'right',
-                  //     height: 22,
-                  //     borderRadius: [4, 4, 0, 0]
-                  // },
+                  abg: {
+                    // backgroundColor: '#333',
+                    // width: '100%',
+                    // align: 'right',
+                    // height: 22,
+                    // borderRadius: [4, 4, 0, 0]
+                  },
                   hr: {
                     borderColor: '#aaa',
                     width: '100%',

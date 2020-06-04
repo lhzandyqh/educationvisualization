@@ -5,11 +5,23 @@
           <div class="col-md-4">
             <img class="nav_img" src="../assets/weblogo.png">
             <span class="nav_title">数字校园教育智慧大脑服务平台</span>
+<!--            <span @click="goTest">fdfdf</span>-->
           </div>
           <div class="col-md-1 el-col-md-offset-11">
-            <img class="nav_right_logo" src="../assets/icon/jilu.png">
-            <img class="nav_right_logo" src="../assets/icon/tongzhi.png">
-            <img class="nav_right_shu" src="../assets/icon/shuxian.png">
+            <div style="display: inline-block">
+              <a :href="url" title="下载"><img class="nav_right_logo" src="../assets/icon/jilu.png"></a>
+            </div>
+            <div style="display: inline-block">
+              <el-tooltip class="item" effect="light" content="平台采取统一身份认证，登录后依权限可查看“智慧校园综合数据可视化”、“智慧校园分类数据可视化-教师”，以及各应用系统或平台。统一登录与认证请点击右侧按钮。" placement="bottom-start">
+                <img class="nav_right_logo" src="../assets/icon/tongzhi.png">
+              </el-tooltip>
+            </div>
+            <div style="display: inline-block">
+              <img class="nav_right_shu" src="../assets/icon/shuxian.png">
+            </div>
+<!--            <img class="nav_right_logo" src="../assets/icon/jilu.png">-->
+<!--            <img class="nav_right_logo" src="../assets/icon/tongzhi.png">-->
+<!--            <img class="nav_right_shu" src="../assets/icon/shuxian.png">-->
           </div>
           <div class="col-md-1">
 <!--            <img class="nav_touxiang" v-if="dengluFlag" src="../assets/touxiang.png">-->
@@ -120,7 +132,7 @@
                   </div>
                 </div>
                 <div class="col-md-2" style="margin-right: 12px">
-                  <div class="xitong_enter">
+                  <div class="xitong_enter" @click="gokaoqing">
                     <div class="xitong_item" style="background-color: #37c6eb">
                       <img :src="imgOne" @mouseover="mouseOver" @mouseout="mouseOut">
                       <div class="xitong_item_name">
@@ -219,7 +231,7 @@
                     <div class="xitong_item" style="background-color: #b6eb69">
                       <img src="../assets/icon/zaixianxuexi.png">
                       <div class="xitong_item_name">
-                        <span>在线学习</span>
+                        <span>青程在线</span>
                       </div>
                     </div>
                   </div>
@@ -377,6 +389,7 @@ export default {
   },
   data () {
     return {
+      url: 'http://zhongkeruitong.top/zhenghe/%E6%95%B0%E5%AD%97%E6%A0%A1%E5%9B%AD%E6%95%99%E8%82%B2%E6%99%BA%E6%85%A7%E5%A4%A7%E8%84%91%E4%BA%A7%E5%93%81%E4%B8%8E%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F2017-2019.pdf',
       dengluFlag: true,
       zaixianFlag: true,
       xueyaFlag: true,
@@ -409,6 +422,12 @@ export default {
     this.getLoginStatus()
   },
   methods: {
+    gokaoqing: function () {
+      window.open('https://zhongkeruitong.top/zhenghe_qianduan/kaoqin/index.html#/')
+    },
+    goTest: function () {
+      this.$router.push('/teacherPage')
+    },
     changeCharts: function () {
       this.chartsFlag = !this.chartsFlag
     },
@@ -426,28 +445,56 @@ export default {
       })
     },
     goPaike: function () {
-      // window.location.href = 'http://zhongkeruitong.top/show/class_system/#/login'
-      window.open('http://zhongkeruitong.top/show/class_system/#/login')
+      if (this.dengluFlag) {
+        // window.location.href = 'http://58.119.112.11:11004/teacherworks/#/login?redirect=%2FcountInfo%2Findex'
+        window.open('https://zhongkeruitong.top/zhenghe_qianduan/class/#/administrativeStudent')
+      } else {
+        this.$message({
+          message: '请登录后再试',
+          type: 'warning'
+        })
+      }
     },
     goJiaoshipingce: function () {
-      // window.location.href = 'http://58.119.112.11:11004/teacherworks/#/login?redirect=%2FcountInfo%2Findex'
-      window.open('http://58.119.112.11:11004/teacherworks/#/login?redirect=%2FcountInfo%2Findex')
+      if (this.dengluFlag) {
+        // window.location.href = 'http://58.119.112.11:11004/teacherworks/#/login?redirect=%2FcountInfo%2Findex'
+        window.open('https://zhongkeruitong.top/zhenghe_qianduan/teacher/')
+      } else {
+        this.$message({
+          message: '请登录后再试',
+          type: 'warning'
+        })
+      }
     },
     goChengjifenxi: function () {
-      // window.location.href = 'http://zhongkeruitong.top/show/scoreAprile/static/teacher.html#/login'
-      window.open('http://zhongkeruitong.top/show/scoreAprile/static/teacher.html#/login')
+      if (this.dengluFlag) {
+        // window.location.href = 'http://58.119.112.11:11004/teacherworks/#/login?redirect=%2FcountInfo%2Findex'
+        window.open('https://zhongkeruitong.top/zhenghe_qianduan/score/')
+      } else {
+        this.$message({
+          message: '请登录后再试',
+          type: 'warning'
+        })
+      }
     },
     goXiezuo: function () {
       // window.location.href = 'http://114.242.223.253/zihui/#/'
       window.open('http://114.242.223.253/zihui/#/')
     },
     goZichan: function () {
-      // window.location.href = 'http://zhongkeruitong.top/show/assertmanager/static/index.html#/login'
-      window.open('http://zhongkeruitong.top/show/assertmanager/static/index.html#/login')
+      if (this.dengluFlag) {
+        // window.location.href = 'http://58.119.112.11:11004/teacherworks/#/login?redirect=%2FcountInfo%2Findex'
+        window.open('https://zhongkeruitong.top/zhenghe_qianduan/assert/#/dashboard')
+      } else {
+        this.$message({
+          message: '请登录后再试',
+          type: 'warning'
+        })
+      }
     },
     goPijiao: function () {
       // window.location.href = 'http://zhongkeruitong.top/show/taq/#/login'
-      window.open('http://zhongkeruitong.top/show/taq/#/login')
+      window.open('https://zhongkeruitong.top/show/taq/dist/index.html#/dashboard')
     },
     goZaixian: function () {
       // window.location.href = 'http://www.zhongkeruitong.top/show/qingcheng/#/'
@@ -460,7 +507,7 @@ export default {
       window.location.href = 'https://zhongkeruitong.top/cas/login?service=http://zhongkeruitong.top/zhenghe'
       verifyLogin().then(response => {
         console.log('测试登陆接口')
-        console.log(response)
+        console.log(response.data)
       })
     },
     mouseOver: function (index) {
@@ -540,6 +587,10 @@ export default {
         if (response.data.code === 0) {
           console.log('登陆成功')
           this.dengluFlag = true
+          console.log('检查权限')
+          console.log(response.data.data.role[0])
+          window.localStorage.setItem('userRole', response.data.data.role[0])
+          window.localStorage.setItem('roles', response.data.data.role)
         }
       })
     }
@@ -593,7 +644,7 @@ export default {
     width: 30px;
     height: 30px;
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 16px;
     margin-left: 10px;
     cursor: pointer;
   }

@@ -7,7 +7,7 @@
       <div class="content">
         <span style="font-weight: bolder">当前用户：</span>
 <!--        <span>{{this.toPopoverData}}</span>-->
-        <span style="font-weight: bolder"></span>
+        <span style="font-weight: bolder">ruitongAI</span>
         <el-divider style="padding-top: 10px"></el-divider>
         <div class="function_item">
           <div class="functionLogo">
@@ -38,8 +38,20 @@ export default {
   name: 'userSettingPopover',
   methods: {
     gotoTeacher: function () {
+      console.log('测试进入里面的平台页')
       this.$router.push('/teacherPage')
       // this.$router.push('/jiaoshiPage')
+      // var change = localStorage.getItem('userRole')
+      // // const dangqian = localStorage.getItem('userRole')
+      // // const roles = localStorage.getItem('roles')
+      // // if (dangqian === roles[0]) {
+      // //   change = roles[1]
+      // // } else {
+      // //   change = roles[0]
+      // // }
+      // this.$store.dispatch('ChangeRoles', change).then(() => {
+      //   this.$emit('change')
+      // })
     },
     logout: function () {
       console.log('测试CASlogin登出')

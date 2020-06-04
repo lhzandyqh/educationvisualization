@@ -1,5 +1,5 @@
 <template>
-  <div class="app">
+  <div class="app my-background">
     <div class="row">
       <div class="col-md-4 left_head" >
         <img class="nav_img" src="../assets/nav_logo.png">
@@ -7,13 +7,25 @@
       </div>
       <div class="col-md-4">
         <div class="center_head">
-          <span>教师信息可视化平台</span>
+          <span>智慧校园分类数据可视化-教师</span>
         </div>
       </div>
       <div class="col-md-3 right_head el-col-offset-1">
-        <span>2020年4月22日星期三 15:31:42</span>
-        <img src="../assets/icon/shezhi.png">
-        <img src="../assets/icon/dianyuan.png">
+        <div style="display: inline-block">
+          <span style="color: white">2020年4月22日星期三 15:31:42</span>
+        </div>
+        <div style="display: inline-block">
+          <img src="../assets/icon/shezhiwhite.png">
+        </div>
+        <div style="display: inline-block">
+          <img src="../assets/icon/dianyuanwhite.png" @click="goHomePage">
+        </div>
+        <div style="display: inline-block">
+          <el-tooltip class="item" effect="dark" content="点击切换身份信息，获取对应身份的系统权限" placement="bottom-start">
+            <img src="../assets/icon/qiehuan.png" @click="fanhui">
+          </el-tooltip>
+        </div>
+<!--        <img src="../assets/icon/qiehuan.png" @click="qiehuanRole">-->
       </div>
     </div>
     <div class="row content_container">
@@ -24,19 +36,19 @@
         </div>
         <div class="apps" v-show="appFlag">
           <div class="appitem">
-            <span>我的应用</span>
+            <span>教师评测</span>
           </div>
           <div class="appitem">
-            <span>我的应用</span>
+            <span>成绩分析</span>
           </div>
           <div class="appitem">
-            <span>我的应用</span>
+            <span>可视资产</span>
           </div>
           <div class="appitem">
-            <span>我的应用</span>
+            <span>课堂考勤</span>
           </div>
           <div class="appitem">
-            <span>我的应用</span>
+            <span>评教评学</span>
           </div>
         </div>
       </div>
@@ -67,10 +79,10 @@
                   <span style="color: #42b983">张老师</span>
                 </div>
                 <div style="margin-top: 20px">
-                  <span style="font-size: 10px;font-weight: bold">教育大数据中心</span>
+                  <span style="font-size: 10px;font-weight: bold;color: white">教育大数据中心</span>
                 </div>
                 <div>
-                  <span style="font-size: 10px;font-weight: bold">教工号：100001</span>
+                  <span style="font-size: 10px;font-weight: bold;color: white">教工号：100001</span>
                 </div>
               </div>
             </div>
@@ -85,23 +97,15 @@
                   <div class="dongtai_container">
                     <div class="row dongtai_item">
                       <div class="col-md-8">
-                        <span  style="margin-left: 6px">2020年度第一次月考成绩</span>
+                        <span  style="margin-left: 6px">2020年度第二次月考成绩出炉</span>
                       </div>
                       <div class="col-md-4">
-                        <span>2020-03-21</span>
+                        <span>2020-05-28</span>
                       </div>
                     </div>
                     <div class="row dongtai_item">
                       <div class="col-md-8">
-                        <span style="margin-left: 6px">2020年度第一次月考成绩</span>
-                      </div>
-                      <div class="col-md-4">
-                        <span>2020-03-21</span>
-                      </div>
-                    </div>
-                    <div class="row dongtai_item">
-                      <div class="col-md-8">
-                        <span  style="margin-left: 6px">2020年度第一次月考成绩</span>
+                        <span style="margin-left: 6px">2020年度教师评测开始</span>
                       </div>
                       <div class="col-md-4">
                         <span>2020-03-21</span>
@@ -112,31 +116,39 @@
                         <span  style="margin-left: 6px">2020年度第一次月考成绩</span>
                       </div>
                       <div class="col-md-4">
-                        <span>2020-03-21</span>
+                        <span>2020-02-28</span>
                       </div>
                     </div>
                     <div class="row dongtai_item">
                       <div class="col-md-8">
-                        <span  style="margin-left: 6px">2020年度第一次月考成绩</span>
+                        <span  style="margin-left: 6px">关于在线教学准备工作指导</span>
                       </div>
                       <div class="col-md-4">
-                        <span>2020-03-21</span>
+                        <span>2020-02-15</span>
                       </div>
                     </div>
                     <div class="row dongtai_item">
                       <div class="col-md-8">
-                        <span  style="margin-left: 6px">2020年度第一次月考成绩</span>
+                        <span  style="margin-left: 6px">食堂卫生检查通知</span>
                       </div>
                       <div class="col-md-4">
-                        <span>2020-03-21</span>
+                        <span>2020-02-05</span>
                       </div>
                     </div>
                     <div class="row dongtai_item">
                       <div class="col-md-8">
-                        <span  style="margin-left: 6px">2020年度第一次月考成绩</span>
+                        <span  style="margin-left: 6px">2020年度第一季度资产清点</span>
                       </div>
                       <div class="col-md-4">
-                        <span>2020-03-21</span>
+                        <span>2020-01-27</span>
+                      </div>
+                    </div>
+                    <div class="row dongtai_item">
+                      <div class="col-md-8">
+                        <span  style="margin-left: 6px">全校防疫会议召开</span>
+                      </div>
+                      <div class="col-md-4">
+                        <span>2020-01-21</span>
                       </div>
                     </div>
                   </div>
@@ -263,33 +275,13 @@
                   <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
                 </div>
                 <div class="col-md-2" style="text-align: center">
-                  <span style="width:60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
+                  <span style="width:60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">英语</span>
                 </div>
                 <div class="col-md-2" style="text-align: center">
                   <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
                 </div>
                 <div class="col-md-2" style="text-align: center">
-                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
-                </div>
-              </div>
-              <div class="row " style="margin-top: 2px">
-                <div class="col-md-2" style="text-align: center">
-                  <span style="width: 50px;background-color: #263749;height: 25px;display: inline-block;margin-left: 4px;margin-top: 4px;color: white;font-size: 10px;line-height: 25px">1</span>
-                </div>
-                <div class="col-md-2" style="text-align: center">
-                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -20px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">语文</span>
-                </div>
-                <div class="col-md-2" style="text-align: center">
-                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
-                </div>
-                <div class="col-md-2" style="text-align: center">
-                  <span style="width:60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
-                </div>
-                <div class="col-md-2" style="text-align: center">
-                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
-                </div>
-                <div class="col-md-2" style="text-align: center">
-                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
+                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">英语</span>
                 </div>
               </div>
               <div class="row " style="margin-top: 2px">
@@ -297,19 +289,19 @@
                   <span style="width: 50px;background-color: #263749;height: 25px;display: inline-block;margin-left: 4px;margin-top: 4px;color: white;font-size: 10px;line-height: 25px">2</span>
                 </div>
                 <div class="col-md-2" style="text-align: center">
-                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -20px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">语文</span>
+                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -20px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
                 </div>
                 <div class="col-md-2" style="text-align: center">
-                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
+                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">语文</span>
                 </div>
                 <div class="col-md-2" style="text-align: center">
-                  <span style="width:60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
+                  <span style="width:60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">语文</span>
                 </div>
                 <div class="col-md-2" style="text-align: center">
-                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
+                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">英语</span>
                 </div>
                 <div class="col-md-2" style="text-align: center">
-                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
+                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">物理</span>
                 </div>
               </div>
               <div class="row " style="margin-top: 2px">
@@ -317,19 +309,19 @@
                   <span style="width: 50px;background-color: #263749;height: 25px;display: inline-block;margin-left: 4px;margin-top: 4px;color: white;font-size: 10px;line-height: 25px">3</span>
                 </div>
                 <div class="col-md-2" style="text-align: center">
-                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -20px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">语文</span>
+                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -20px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">化学</span>
                 </div>
                 <div class="col-md-2" style="text-align: center">
-                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
+                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">物理</span>
                 </div>
                 <div class="col-md-2" style="text-align: center">
-                  <span style="width:60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
+                  <span style="width:60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">生物</span>
                 </div>
                 <div class="col-md-2" style="text-align: center">
-                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
+                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">历史</span>
                 </div>
                 <div class="col-md-2" style="text-align: center">
-                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
+                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">化学</span>
                 </div>
               </div>
               <div class="row " style="margin-top: 2px">
@@ -337,19 +329,19 @@
                   <span style="width: 50px;background-color: #263749;height: 25px;display: inline-block;margin-left: 4px;margin-top: 4px;color: white;font-size: 10px;line-height: 25px">4</span>
                 </div>
                 <div class="col-md-2" style="text-align: center">
-                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -20px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">语文</span>
+                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -20px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">历史</span>
                 </div>
                 <div class="col-md-2" style="text-align: center">
                   <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
                 </div>
                 <div class="col-md-2" style="text-align: center">
-                  <span style="width:60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
+                  <span style="width:60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">历史</span>
                 </div>
                 <div class="col-md-2" style="text-align: center">
-                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
+                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">地理</span>
                 </div>
                 <div class="col-md-2" style="text-align: center">
-                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
+                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">生物</span>
                 </div>
               </div>
               <div class="row " style="margin-top: 2px">
@@ -357,19 +349,19 @@
                   <span style="width: 50px;background-color: #263749;height: 25px;display: inline-block;margin-left: 4px;margin-top: 4px;color: white;font-size: 10px;line-height: 25px">5</span>
                 </div>
                 <div class="col-md-2" style="text-align: center">
-                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -20px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">语文</span>
+                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -20px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">体育</span>
                 </div>
                 <div class="col-md-2" style="text-align: center">
-                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
+                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">化学</span>
                 </div>
                 <div class="col-md-2" style="text-align: center">
-                  <span style="width:60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
+                  <span style="width:60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">地理</span>
                 </div>
                 <div class="col-md-2" style="text-align: center">
-                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
+                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">物理</span>
                 </div>
                 <div class="col-md-2" style="text-align: center">
-                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
+                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">化学</span>
                 </div>
               </div>
               <div class="row " style="margin-top: 2px">
@@ -377,19 +369,39 @@
                   <span style="width: 50px;background-color: #263749;height: 25px;display: inline-block;margin-left: 4px;margin-top: 4px;color: white;font-size: 10px;line-height: 25px">6</span>
                 </div>
                 <div class="col-md-2" style="text-align: center">
-                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -20px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">语文</span>
+                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -20px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">地理</span>
                 </div>
                 <div class="col-md-2" style="text-align: center">
-                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
+                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">生物</span>
                 </div>
                 <div class="col-md-2" style="text-align: center">
-                  <span style="width:60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
+                  <span style="width:60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">体育</span>
                 </div>
                 <div class="col-md-2" style="text-align: center">
-                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
+                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">化学</span>
                 </div>
                 <div class="col-md-2" style="text-align: center">
-                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">数学</span>
+                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">历史</span>
+                </div>
+              </div>
+              <div class="row " style="margin-top: 2px">
+                <div class="col-md-2" style="text-align: center">
+                  <span style="width: 50px;background-color: #263749;height: 25px;display: inline-block;margin-left: 4px;margin-top: 4px;color: white;font-size: 10px;line-height: 25px">7</span>
+                </div>
+                <div class="col-md-2" style="text-align: center">
+                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -20px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">自习</span>
+                </div>
+                <div class="col-md-2" style="text-align: center">
+                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">自习</span>
+                </div>
+                <div class="col-md-2" style="text-align: center">
+                  <span style="width:60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">自习</span>
+                </div>
+                <div class="col-md-2" style="text-align: center">
+                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">自习</span>
+                </div>
+                <div class="col-md-2" style="text-align: center">
+                  <span style="width: 60px;background-color: #263749;height: 25px;display: inline-block;margin-left: -25px;margin-top: 4px;color: white;font-size: 12px;line-height: 25px">自习</span>
                 </div>
               </div>
             </div>
@@ -578,6 +590,12 @@ export default {
   methods: {
     appControl: function () {
       this.appFlag = !this.appFlag
+    },
+    goHomePage: function () {
+      this.$router.replace('/')
+    },
+    fanhui: function () {
+      this.$router.push('/teacherPage')
     }
   }
 }
@@ -593,6 +611,7 @@ export default {
   }
   .nav_title {
     font-weight: bolder;
+    color: white;
   }
   .center_head {
     text-align: center;
@@ -601,6 +620,7 @@ export default {
   .center_head span {
     font-size: 20px;
     font-weight: bolder;
+    color: white;
   }
   .right_head {
     margin-top: 50px;
@@ -757,5 +777,12 @@ export default {
     line-height: 25px;
     font-size: 15px;
     color: white;
+  }
+  .my-background {
+    height:100% ;
+    width: 100%;
+    background-image: url("../assets/background.png");
+    background-size: 100%;
+    background-attachment: fixed;
   }
 </style>
