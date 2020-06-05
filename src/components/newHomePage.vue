@@ -12,7 +12,8 @@
               <a :href="url" title="下载"><img class="nav_right_logo" src="../assets/icon/jilu.png"></a>
             </div>
             <div style="display: inline-block">
-              <el-tooltip class="item" effect="light" content="平台采取统一身份认证，登录后依权限可查看“智慧校园综合数据可视化”、“智慧校园分类数据可视化-教师”，以及各应用系统或平台。统一登录与认证请点击右侧按钮。" placement="bottom-start">
+              <el-tooltip class="item" effect="light" content="" placement="bottom-start">
+                <div slot="content">平台采取统一身份认证，登录后依权限可查看“智慧校园综合数据可视化”、“智慧校园分类数据可视化-教师”，以及各应用系统或平台。<br/>统一登录与认证请点击右侧按钮。</div>
                 <img class="nav_right_logo" src="../assets/icon/tongzhi.png">
               </el-tooltip>
             </div>
@@ -366,7 +367,8 @@
 <!--        </div>-->
 <!--      </div>-->
       <div class="copyright">
-        <span>Copyright   中科智禾教育大数据中心 ©2019</span>
+        <span style="cursor: pointer" @click="goAboutUs">关于我们</span>
+        <span style="margin-left: 30px">Copyright   中科智禾教育大数据中心 ©2019</span>
       </div>
     </div>
 </template>
@@ -422,11 +424,16 @@ export default {
     this.getLoginStatus()
   },
   methods: {
+    goAboutUs: function () {
+      console.log('去关于我们')
+      const newurl = this.$router.resolve({name: 'aboutUs', params: {}})
+      window.open(newurl.href, '_blank')
+    },
     gokaoqing: function () {
       window.open('https://zhongkeruitong.top/zhenghe_qianduan/kaoqin/index.html#/')
     },
     goTest: function () {
-      this.$router.push('/teacherPage')
+      this.$router.push('/jiaoshiPage')
     },
     changeCharts: function () {
       this.chartsFlag = !this.chartsFlag

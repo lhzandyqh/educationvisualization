@@ -14,7 +14,8 @@ export default {
       option: {
         angleAxis: {
           type: 'category',
-          data: ['物品A', '物品B', '物品C', '物品D', '物品E', '物品F', '物品G']
+          data: ['固定资产', '无形资产', '低值资产', '易消耗资产', '其他资产']
+          // data: ['物品A', '物品B', '物品C', '物品D', '物品E', '物品F', '物品G']
         },
         radiusAxis: {
         },
@@ -22,27 +23,27 @@ export default {
         },
         series: [{
           type: 'bar',
-          data: [1, 2, 3, 4, 3, 5, 1],
+          data: [2, 2, 3, 4, 3],
           coordinateSystem: 'polar',
           name: 'A',
-          stack: 'a'
-        }, {
-          type: 'bar',
-          data: [2, 4, 6, 1, 3, 2, 1],
-          coordinateSystem: 'polar',
-          name: 'B',
-          stack: 'a'
-        }, {
-          type: 'bar',
-          data: [1, 2, 3, 4, 1, 2, 5],
-          coordinateSystem: 'polar',
-          name: 'C',
-          stack: 'a'
-        }],
-        legend: {
-          show: true,
-          data: ['A', 'B', 'C']
-        }
+          stack: 'a'}]
+        // }, {
+        //   type: 'bar',
+        //   data: [2, 4, 6, 1, 3, 2, 1],
+        //   coordinateSystem: 'polar',
+        //   name: 'B',
+        //   stack: 'a'
+        // }, {
+        //   type: 'bar',
+        //   data: [1, 2, 3, 4, 1, 2, 5],
+        //   coordinateSystem: 'polar',
+        //   name: 'C',
+        //   stack: 'a'
+        // }]
+        // legend: {
+        //   show: true,
+        //   data: ['A', 'B', 'C']
+        // }
         // radar: [
         //   {
         //     indicator: [

@@ -5,6 +5,7 @@ import Router from 'vue-router'
 import newHomePage from '@/components/newHomePage'
 import teacherPage from '@/components/teacherPage'
 import jiaoshiPage from '@/components/jiaoshiPage'
+import aboutUs from '@/components/aboutUs'
 // import errorPage from '@/components/errorPage'
 
 Vue.use(Router)
@@ -30,6 +31,11 @@ export default new Router({
       path: '/jiaoshiPage',
       name: 'jiaoshiPage',
       component: jiaoshiPage
+    },
+    {
+      path: '/aboutUs',
+      name: 'aboutUs',
+      component: aboutUs
     }
   ]
 })

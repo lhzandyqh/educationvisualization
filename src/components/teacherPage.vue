@@ -10,7 +10,7 @@
           <span>智慧校园综合数据可视化</span>
         </div>
       </div>
-      <div class="col-md-3 right_head el-col-offset-1">
+      <div class="col-md-4 right_head">
         <div style="display: inline-block">
           <span style="color: white">2020年4月22日星期三 15:31:42</span>
         </div>
